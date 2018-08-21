@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: wzhou
+Build-Jdk: 10.0.1
+Implementation-Title: chronos-social-network-poc
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: org.chronos.web.app
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/chronos-social-network-poc
+Created-By: Maven Integration for Eclipse
+
