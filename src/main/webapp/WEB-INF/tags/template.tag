@@ -70,8 +70,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              <h1>Social Network</h1>
+              <span class="subheading">Coming soon..</span>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+            <p class="copyright text-muted">Copyright &copy; Chronos 2018</p>
           </div>
         </div>
       </div>

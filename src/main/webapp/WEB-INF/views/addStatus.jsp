@@ -6,6 +6,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security"
    uri="http://www.springframework.org/security/tags"%>
+   <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>	
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <page:template>
    <jsp:attribute name="title">
       Status Update
@@ -27,10 +29,10 @@
 
           <hr>
 
-		  <p>${statusUpdate}</p>
+		  <!-- <p>${statusUpdate}</p>-->
           <!-- Date/Time -->
           <p>Posted on January 1, 2018 at 12:00 PM</p>
-
+		  <p>${statusUpdate}</p>
           <hr>
 
           <!-- Comments Form -->
@@ -82,6 +84,21 @@
               </div>
             </div>
           </div>
+          
+          <div class="panel panel-default">
+		
+			<div class="panel-heading">
+				<div class="panel-title">Status update added on <fmt:formatDate pattern="EEEE d MMMM y 'at' H:mm:s" value="${latestStatusUpdate.dateAdded}" /></div>
+			</div>
+			
+			<div class="panel-body">
+				
+				<c:out value="${latestStatusUpdate.statusText}" />
+			
+			</div>
+		
+		
+		</div>
 
           <!-- Categories Widget -->
           <div class="card my-4">

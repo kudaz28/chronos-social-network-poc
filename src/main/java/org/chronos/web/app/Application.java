@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"org.chronos.web.app.model", "org.chronos.web.app.controllers.*", "org.chronos.web.app.controllers", "org.chronos.web.app.repository"})
+@ComponentScan(basePackages = {"org.chronos.web.app.*"})
 @EnableConfigurationProperties
 @EntityScan(basePackages = {"org.chronos.web.app.model"})
 public class Application {

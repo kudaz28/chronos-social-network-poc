@@ -16,6 +16,6 @@ public class StatusUpdateService {
 	}
 	
 	public StatusUpdate getLatest() {
-		return statusUpdateRepository.findFirstByOrderByAddedDesc();
+		return statusUpdateRepository.findFirstByOrderByDateAddedDesc();
 	}
 }

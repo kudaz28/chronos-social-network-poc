@@ -16,23 +16,23 @@ public class StatusController
 	@Autowired
 	private StatusUpdateService statusUpdateService;
 	
-	@RequestMapping(value = "/addstatus", method = RequestMethod.GET)
+	@RequestMapping(value = "/addStatus", method = RequestMethod.GET)
 	ModelAndView addStatus(ModelAndView modelAndView) {
 
-		modelAndView.setViewName("addstatus");
+		modelAndView.setViewName("addStatus");
 
 		StatusUpdate statusUpdate = new StatusUpdate("Hello from the model", new Date());
-		
-		//StatusUpdate latestStatusUpdate = statusUpdateService.getLatest();
+
+		StatusUpdate latestStatusUpdate = statusUpdateService.getLatest();
 
 		modelAndView.getModel().put("statusUpdate", statusUpdate);
-		//modelAndView.getModel().put("latestStatusUpdate", latestStatusUpdate);
+		modelAndView.getModel().put("latestStatusUpdate", latestStatusUpdate);
 
 		return modelAndView;
 	}
 
-	/*@RequestMapping(value = "/addstatus", method = RequestMethod.POST)
-	ModelAndView addStatus(ModelAndView modelAndView, StatusUpdate statusUpdate) {
+	@RequestMapping(value = "/addstatus", method = RequestMethod.POST)
+	ModelAndView saveStatus(ModelAndView modelAndView, StatusUpdate statusUpdate) {
 
 		modelAndView.setViewName("addstatus");
 		
@@ -43,6 +43,6 @@ public class StatusController
 		
 
 		return modelAndView;
-	}*/
+	}
 }
 
