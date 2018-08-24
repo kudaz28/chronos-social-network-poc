@@ -11,6 +11,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "STATUS_UPDATE")
@@ -22,6 +23,7 @@ public class StatusUpdate {
 	private Long statusId;
 
 	@Column(name = "STATUS_TEXT")
+	@Size(min=5, max=255, message="{addStatus.text.size}")
 	private String statusText;
 
 	@Column(name = "DATE_ADDED")
@@ -51,7 +53,7 @@ public class StatusUpdate {
 	}
 
 	public Long getStatusId() {
-		return statusId;
+		return statusId;  
 	}
 
 	public void setStatusId(Long statusId) {

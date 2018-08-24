@@ -17,7 +17,11 @@
 
         <!-- Post Content Column -->
         <div class="col-lg-8">
-
+        
+          <%-- Request status attribute: <%=request.getAttribute("statusUpdate") %><br/>
+		  JSP Compiled Object: <%= this %><br/>
+		  JSP Compiled Class: <%= this.getClass() %><br/> --%>
+		  
           <!-- Title -->
           <h1 class="mt-4">Timeline</h1>
 
@@ -26,28 +30,40 @@
             by
             <a href="#">Start Bootstrap</a>
           </p>
-
-          <hr>
-
-		  <!-- <p>${statusUpdate}</p>-->
-          <!-- Date/Time -->
-          <p>Posted on January 1, 2018 at 12:00 PM</p>
-		  <p>${statusUpdate}</p>
+		  <p>Today's date January 1, 2018 at 12:00 PM</p>
           <hr>
 
           <!-- Comments Form -->
           <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
+            <h5 class="card-header">What's happening</h5>
             <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Add </button>
-              </form>
+              <form:form role="form"
+                     action="${pageContext.request.contextPath}/saveStatusUpdate"
+                     method="post" modelAttribute="statusUpdate">
+     
+					<div class="form-group">
+						<form:textarea type="text"
+                                 name="statusText" id="userName" path="statusText"
+                                 class="form-control input-md" placeholder="What's happening?"
+                                 tabindex="1" ></form:textarea>
+					</div>
+					<input class="btn btn-primary" type="submit" name="submit" value="Add Status" />				
+			  </form:form>
             </div>
           </div>
           
+          <hr>
+
+		  <div class="card my-4">
+		
+			<div class="card-header">
+				<div class="panel-title">Status update added on <fmt:formatDate pattern="EEEE d MMMM y 'at' H:mm:s" value="${latestStatusUpdate.dateAdded}" /></div>
+			</div>
+			<div class="card-body">
+				<c:out value="${latestStatusUpdate.statusText}" />
+			</div>	
+		  </div>
+		  
           <hr>
 
           <!-- Comment with nested comments -->
@@ -84,21 +100,6 @@
               </div>
             </div>
           </div>
-          
-          <div class="panel panel-default">
-		
-			<div class="panel-heading">
-				<div class="panel-title">Status update added on <fmt:formatDate pattern="EEEE d MMMM y 'at' H:mm:s" value="${latestStatusUpdate.dateAdded}" /></div>
-			</div>
-			
-			<div class="panel-body">
-				
-				<c:out value="${latestStatusUpdate.statusText}" />
-			
-			</div>
-		
-		
-		</div>
 
           <!-- Categories Widget -->
           <div class="card my-4">
